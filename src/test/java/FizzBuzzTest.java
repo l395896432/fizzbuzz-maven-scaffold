@@ -13,4 +13,10 @@ public class FizzBuzzTest {
       String result=FizzBuzz.to(number);
       Assert.assertEquals("Buzz",result);
   }
+  @Test
+  public void sould_Void_Fizz_by15(){
+      int number =15;
+      String result=FizzBuzz.to(number);
+      Assert.assertEquals("FizzBuzz",result);
+  }
 }
