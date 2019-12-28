@@ -7,4 +7,10 @@ public class FizzBuzzTest {
       String result=FizzBuzz.to(number);
       Assert.assertEquals("Fizz",result);
   }
+    @Test
+     public void sould_Void_Fizz_by5(){
+      int number =5;
+      String result=FizzBuzz.to(number);
+      Assert.assertEquals("Buzz",result);
+  }
 }
