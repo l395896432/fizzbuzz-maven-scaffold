@@ -10,10 +10,10 @@ public class Mars {
     private int y;
     public void land(String area, String s) {
         areamove=area;
-        point=s.replace(",","");
-        x=Integer.valueOf(point.substring(0,1));
-        y=Integer.valueOf(point.substring(1,2));
-        forward =point.substring(2);
+        List<String> areaList = Arrays.asList(s.split(","));
+        int x=Integer.valueOf(areaList.get(0));
+        int y=Integer.valueOf(areaList.get(1));
+        forward=areaList.get(2);
     }
     public void move(){
        if("N".equals(forward)){
@@ -68,8 +68,9 @@ public class Mars {
 
     }
     public void collection(String collection) {
-        String areas= collection.substring(0,5);
-        String s=collection.substring(6,11);
+        List<String> areaList = Arrays.asList(collection.split(","));
+        String areas= areaList.get(0)+","+areaList.get(1);
+        String s=areaList.get(2)+","+areaList.get(3)+","+areaList.get(4);
         this.land(areas,s);
         String collec=collection.substring(12,collection.length());
         List<String> list = Arrays.asList(collec.split(","));
@@ -90,7 +91,7 @@ public class Mars {
         List<String> areaList = Arrays.asList(areamove.split(","));
         int outx=Integer.valueOf(areaList.get(0));
         int outy=Integer.valueOf(areaList.get(1));
-        if(x>outx||y>outy){
+        if(x>outx||y>outy||x<0||y<0){
             throw new RuntimeException("已超出范围，不能再继续移动");
         }
         point=""+x+y+forward;
