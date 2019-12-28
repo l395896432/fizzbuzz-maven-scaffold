@@ -17,7 +17,7 @@ public class MarsTest {
    }
    @Test
    public void should_move_on(){
-        String collection="10,10,5,5,E,M,M,M,M,M,M,M,M,M";
+        String collection="20,25,15,22,E,M,L,M,R,R,M,R,M,M,R,M,M,M,M,L,R,M,L,M";
         Mars mars = new Mars();
         mars.collection(collection);
         String point= mars.getPoint();
